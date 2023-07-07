@@ -1,0 +1,68 @@
+﻿<Window x:Class="GrapthProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GrapthProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="View">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ClearButton" Grid.Column="0" Grid.Row="0" Content="Clear image" Click="ClearButton_Click"/>
+        <Button x:Name="closeBtn" Content="Close" Click="closeBtn_Click" Grid.Column="1" />
+        <Button Grid.Column="2" Content="Next mode" Grid.Row="2" x:Name="nextModeBtn" Click="nextModeBtn_Click"  />
+        <Button Grid.Column="0" Content="Previous mode" x:Name="prevModeBtn" Grid.Row="2" Click="prevModeBtn_Click"  />
+        <Label Grid.Column="1" Content="Name of current mode" Grid.Row="2"/>
+        <GroupBox Header="Tree Mode" Visibility="Hidden" x:Name="GroupBoxTreeMode" Grid.ColumnSpan="3" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="65*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="1 opcja" Grid.Column="0" Grid.Row="0"></Button>
+                <Button Content="2 opcja" Grid.Column="0" Grid.Row="1"></Button>
+                <Button Content="3 opcja" Grid.Column="0" Grid.Row="2"></Button>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Drawing Mode" Visibility="Visible" x:Name="GroupBoxDrawingMode" Grid.ColumnSpan="3" Grid.Row="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="65*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Path mode" Visibility="Hidden" x:Name="GroupBoxPathMode" Grid.ColumnSpan="3" Grid.Row="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="65*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </GroupBox>
+        <Image Grid.Column="1" Grid.Row="1" x:Name="GraphImage"/>
+    </Grid>
+</Window>
