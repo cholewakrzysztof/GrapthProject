@@ -25,5 +25,30 @@ namespace GrapthProject
         {
             this.Weight = weight;
         }
+        public float GetWeight() 
+        {
+            return Weight;
+        }
+
+        public Vertice GetDestinationVertice(int fromId) 
+        {
+            if(From.GetId()==fromId)
+                return To;
+            else
+                return From;
+        }
+
+        /// <summary>
+        /// Check if you can draw path from vertice using this edge
+        /// </summary>
+        /// <param name="vertice">Start vertice</param>
+        /// <returns>Boolean determinative usable of edge</returns>
+        public bool CanUseEdge(Vertice vertice) 
+        {
+            if (Directed) 
+                if(vertice.GetId()!=From.GetId())
+                    return false;
+            return true;
+        }
     }
 }

@@ -23,21 +23,58 @@ namespace GrapthProject
 
         public bool ConnectTo(Vertice vertice,bool directed,float weight) 
         {
-            if (Neiboughrs.Contains(vertice))
-                return true;
+            if (!CanConnect(vertice))
+                return false;
             else 
             {
                 Edge edge = new Edge(this,vertice,directed,weight);
-                Edges.Add(edge);
+                this.AddEdge(edge);
                 vertice.AddEdge(edge);
-                Neiboughrs.Add(vertice);
+                this.AddNeiboughr(vertice);
+                vertice.AddNeiboughr(this);
                 return true;
             }
+        }
+
+        public bool ConnectTo(Vertice vertice)
+        {
+            if (!CanConnect(vertice))
+                return false;
+            else
+            {
+                Edge edge = new Edge(this, vertice, false, 0f);
+                this.AddEdge(edge);
+                vertice.AddEdge(edge);
+                this.AddNeiboughr(vertice);
+                vertice.AddNeiboughr(this);
+                return true;
+            }
+        }
+        private bool CanConnect(Vertice vertice) 
+        {
+            if (this.GetId() == vertice.GetId())
+                return false;
+            if (Neiboughrs.Any(ver => ver.GetId() == vertice.GetId()))
+                return false;
+            return true;
         }
 
         public void AddEdge(Edge edge) 
         {
             Edges.Add(edge);
+        }
+        public int GetEdgeIndex(int destinationVerticeId) 
+        {
+            return Edges.FindIndex(edge => edge.GetDestinationVertice(this.GetId()).GetId() == destinationVerticeId);
+        }
+        public Edge GetEdge(int index) 
+        {
+            return Edges[index];
+        }
+
+        public void AddNeiboughr(Vertice vertice) 
+        {
+            Neiboughrs.Add(vertice);
         }
 
         public List<Vertice> GetNeiboughrs() 
