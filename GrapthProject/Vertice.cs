@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrapthProject
 {
-    class Vertice
+    public class Vertice
     {
         private float Weight;
         private List<Edge> Edges = new List<Edge>();
@@ -63,6 +63,11 @@ namespace GrapthProject
         public bool isVisited() 
         {
             return Visited;
+        }
+
+        public static void ResetLastId() 
+        {
+            lastId = 0;
         }
     }
 }

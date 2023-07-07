@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrapthProject
 {
-    class Edge
+    public class Edge
     {
         private bool Directed;
         private Vertice From;

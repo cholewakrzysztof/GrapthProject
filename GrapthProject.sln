@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrapthProject", "GrapthProject\GrapthProject.csproj", "{52748150-F391-4BE5-8853-C97B5FBA4566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrapthProject", "GrapthProject\GrapthProject.csproj", "{52748150-F391-4BE5-8853-C97B5FBA4566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{C535296D-EDB5-4A0D-B1F2-E69EF7F1805C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{52748150-F391-4BE5-8853-C97B5FBA4566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52748150-F391-4BE5-8853-C97B5FBA4566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52748150-F391-4BE5-8853-C97B5FBA4566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C535296D-EDB5-4A0D-B1F2-E69EF7F1805C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C535296D-EDB5-4A0D-B1F2-E69EF7F1805C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C535296D-EDB5-4A0D-B1F2-E69EF7F1805C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C535296D-EDB5-4A0D-B1F2-E69EF7F1805C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
