@@ -19,21 +19,26 @@
         [TestMethod]
         public void TestSetWeight()
         {
-            Assert.AreEqual(0f, verticeFrom.GetEdge(0).GetWeight());
-            Assert.AreEqual(0f, verticeTo.GetEdge(0).GetWeight());
+            Assert.AreEqual(0f, verticeFrom.GetEdgeTo(verticeTo).GetWeight());
+            Assert.AreEqual(0f, verticeTo.GetEdgeTo(verticeFrom).GetWeight());
 
-            verticeFrom.GetEdge(0).SetWeight(10f);
+            verticeFrom.GetEdgeTo(verticeTo).SetWeight(10f);
 
-            Assert.AreEqual(10f, verticeFrom.GetEdge(0).GetWeight());
-            Assert.AreEqual(10f, verticeTo.GetEdge(0).GetWeight());
+            Assert.AreEqual(10f, verticeFrom.GetEdgeTo(verticeTo).GetWeight());
+            Assert.AreEqual(10f, verticeTo.GetEdgeTo(verticeFrom).GetWeight());
         }
 
         [TestMethod]
         public void TestGetDestinationVertice()
         {
-            Edge edge = verticeTo.GetEdge(0);
+            Edge edge = verticeTo.GetEdgeTo(verticeFrom);
             Assert.AreEqual(0, edge.GetDestinationVertice(1).GetId());
             Assert.AreEqual(1, edge.GetDestinationVertice(0).GetId());
         }
+
+        /**
+         * TODO Test directed edges
+         */
+
     }
 }

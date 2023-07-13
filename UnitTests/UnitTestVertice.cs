@@ -77,20 +77,10 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void TestSearchForEdge() 
+        public void TestGetEdgeTo() 
         {
             verticeFrom.ConnectTo(verticeTo);
-
-            Assert.AreEqual(0, verticeFrom.GetEdgeIndex(1));
-            Assert.AreEqual(0, verticeTo.GetEdgeIndex(0));
-            Assert.AreEqual(-1, verticeTo.GetEdgeIndex(3));
-        }
-
-        [TestMethod]
-        public void TestGetEdge() 
-        {
-            verticeFrom.ConnectTo(verticeTo);
-            Assert.AreEqual(verticeTo.GetEdge(verticeTo.GetEdgeIndex(0)), verticeFrom.GetEdge(verticeFrom.GetEdgeIndex(1)));
+            Assert.AreEqual(verticeTo.GetEdgeTo(verticeFrom), verticeFrom.GetEdgeTo(verticeTo));
         }
     }
 }

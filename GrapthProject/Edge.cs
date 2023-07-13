@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,10 @@ namespace GrapthProject
         private Vertice From;
         private Vertice To;
         private float Weight;
+        public Point StartPoint { get; set; }
+        public Point EndPoint { get; set; }
+        public int Id { get; }
+        private static int lastId = 0;
 
         public Edge(Vertice from, Vertice to, bool directed,float weight) 
         {
@@ -19,6 +24,9 @@ namespace GrapthProject
             this.From = from;
             this.To = to;
             this.Weight = weight;
+            Id = lastId++;
+            StartPoint = from.Point;
+            EndPoint = to.Point;
         }
 
         public void SetWeight(float weight) 
@@ -30,9 +38,9 @@ namespace GrapthProject
             return Weight;
         }
 
-        public Vertice GetDestinationVertice(int fromId) 
+        public Vertice GetDestinationVertice(Vertice SourceVertice) 
         {
-            if(From.GetId()==fromId)
+            if(From.GetId()==SourceVertice.GetId())
                 return To;
             else
                 return From;
